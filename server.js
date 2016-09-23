@@ -93,18 +93,21 @@ function createTemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
+var counter = 0;
+app.get('/counter',function(req,res){
+  counter = counter + 1;
+  res.send(counter.toString());
+});
+var names = [];
+app.get('/submit-name',function(req,res){ // /submit-name?name=xxxx
+  //Get the name from the request
+  var name = req.query.name;
+  names.push(name);
+  res.send(JSON.stringify(names));
+});
 app.get('/:articleName',function(req,res){
   var articleName = req.params.articleName;
   res.send(createTemplate(articles[articleName]));  
-});
-
-app.get('/article-two',function(req,res){
-  res.sendFile(path.join(__dirname,'ui','article-two.html'));  
-});
-
-app.get('/article-three',function(req,res){
-    res.sendFile(path.join(__dirname,'ui','article-three.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
