@@ -126,7 +126,7 @@ app.get('/submit-name',function(req,res){ // /submit-name?name=xxxx
   res.send(JSON.stringify(names));
 });
 app.get('/articles/:articleName',function(req,res){
-  var articleName = req.params.articleName;
+  
   
   pool.query("SELECT * FROM article WHERE title = '" + req.param.articleName +"'", function(err,result){
       if(err){
