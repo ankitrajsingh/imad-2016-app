@@ -12,50 +12,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-   'article-one' : {
-	title: 'article One  | Ankit',
-	heading: 'Article One',
-	date: 'Sep 5,2016',
-	Content: `<p>
-              This is the content for my first article. This is the content for my first article. 
-              This is the content for my first article. This is the content for my first article. This is the content for my first article.
-              </p>
-              <p>
-              This is the content for my first article. This is the content for my first article. 
-              This is the content for my first article. This is the content for my first article. This is the content for my first article.
-              </p>
-              <p>
-              This is the content for my first article. This is the content for my first article. 
-              This is the content for my first article. This is the content for my first article. This is the content for my first article.
-              </p>`
-        },
-   'article-two' : {
-       title: 'article Two  | Ankit',
-	heading: 'Article Two',
-	date: 'Sep 10,2016',
-	Content: `<p>
-              This is the content for my second article. 
-              </p>`  
-       
-   },
-   'article-three' : {
-        title: 'article three  | Ankit',
-        heading: 'Article Three',
-        date: 'Sep 25,2016',
-	Content: `<p>
-              This is the content for my first article. This is the content for my first article. 
-              This is the content for my first article. This is the content for my first article. This is the content for my first article.
-              </p>
-              <p>
-              This is the content for my first article. This is the content for my first article. 
-              This is the content for my first article. This is the content for my first article. This is the content for my first article.
-              </p>
-              <p>
-              This is the content for my first article. This is the content for my first article. 
-              This is the content for my first article. This is the content for my first article. This is the content for my first article.
-              </p>`}
-};
+
 function createTemplate(data){
 	var title = data.title;
 	var heading=data.heading;
